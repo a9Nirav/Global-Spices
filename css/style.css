@@ -1,0 +1,1436 @@
+/********** Template CSS **********/
+:root {
+    --primary: #000000;
+    --secondary: #000000;
+    --light: #F6F7FC;
+    --dark: #15233C;
+}
+
+body {
+    color: #000;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    /* background: #222; */
+    /* font-family: Helvetica, sans-serif; */
+}
+
+
+.lora-text {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+.cursor {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    background: var(--primary);
+    pointer-events: none;
+    z-index: 111;
+    border: 1px solid var(--primary);
+    transition: all 0.2s ease-out;
+    animation: moveCursor1 .5s infinite alternate;
+}
+
+.expand {
+    background: transparent;
+    animation: moveCursor2 .5s forwards;
+    border: 1px solid yellow;
+}
+
+@keyframes moveCursor1 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.8);
+    }
+}
+
+@keyframes moveCursor2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2.5);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+/* .logo {
+    height: 57px !important;
+    width: 157px !important;
+} */
+
+.mian-logo {
+    height: 100px !important;
+    width: 300px !important;
+}
+
+
+.logo-text {
+    line-height: 14px;
+    color: #45214f;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.v{
+    scroll-margin-top: 10px !important;
+}
+
+
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url(/img/user-experience.png);
+}
+
+    @media (max-width: 600px){
+        /* .v{
+            scroll-margin-top: 500px !important; 
+        } */
+    }
+
+
+.background1 {
+    background-color: #ffffff;
+}
+
+.color1 {
+    color: #b6228c;
+}
+
+.bg-color2 {
+    background-color: #020203 !important;
+
+}
+
+
+.color2 {
+    color: #020203;
+}
+
+.blue-img {
+    filter: invert(93%) sepia(7%) saturate(0%) hue-rotate(78deg) brightness(106%) contrast(107%);
+}
+
+.img-shadow {
+    filter: drop-shadow(0 0 0.2rem #0b2174)
+}
+
+.text18 {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.hover1:hover {
+    /* color: #4359a5 !important; */
+    opacity: 0.5;
+    outline: 2px solid #0b2174;
+
+}
+
+
+
+.head2 {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+
+.banner {
+    position: relative;
+    background: linear-gradient(90deg, #2e2d2e, #1d1d1d, #161616, #040404);
+    color: white;
+    font-size: 1.5em;
+    padding: 15px 40px;
+    text-align: center;
+    display: inline-block;
+    clip-path: polygon(10% 1%, 102% -10%, 93% 50%, 100% 100%, 10% 100%, 0% 50%);
+    letter-spacing: 1px;
+}
+
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.white-img {
+    filter: invert(95%) sepia(96%) saturate(16%) hue-rotate(274deg) brightness(105%) contrast(100%);
+}
+
+.hoverimg:hover {
+    /* border: 10px solid #0b2174; */
+    scale: 1.2;
+    transition: 3s;
+
+}
+
+
+
+
+.service-item:hover {
+    outline: 2px solid #249cbf;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #249cbf;
+    color: #ffffff;
+    scale: 0.9;
+    transition: 1s;
+}
+
+.service-item:hover h4 {
+    color: #ffffff;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-outline-primary:hover,
+.btn.btn-secondary,
+.btn.btn-outline-secondary:hover {
+    color: #FFFFFF;
+}
+
+.btn.btn-primary:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn.btn-secondary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+/* .carousel-item {
+    height: 60vh;
+
+
+} */
+
+.carousel-caption {
+    background: rgba(1, 13, 15, 0.5) !important;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+
+.typewriter p {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Centers the text */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    color: #ffffff;
+    /* animation: blink-caret .75s step-end infinite; Cursor blinking */
+    /* text-shadow: rgb(255, 255, 255) 0px 5px 15px; */
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(3px);
+        /* Start and end at normal position */
+    }
+
+    50% {
+        transform: translateY(-3px);
+        /* Move up by 10px at the middle of the animation */
+    }
+}
+
+.jumping-text {
+    display: inline-block;
+    /* Required to apply transform */
+    animation: jump 1s ease-in-out infinite;
+    /* Animation runs indefinitely */
+}
+
+
+/* nirav vadhiya css start  */
+
+.loptop-view{
+    display: none !important;
+}
+
+
+.Special-Highlights-container {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 1rem;
+    padding: 10px;
+}
+
+.Spice-Origins-inner-box{
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+   
+}
+
+.Spice-Origins-inner-box img{
+    height: 180px;
+    width: 200px;
+    padding: 1rem;
+}
+
+
+
+@media (max-width: 600px){
+    .Spice-Origins-inner-box img{
+        height: 170px;
+    }
+
+    .phone-pad img{
+        padding: 8px !important;
+        
+    }
+
+    .loptop-view{
+        display: block !important;
+    }
+
+    .laptop-display-none{
+        display: none !important;
+    }
+}
+
+
+.Spice-Origins-inner-box p{
+    background-color: #211f1f;
+    color: white !important;
+    text-align: center;
+    padding: 5px 0px;
+    
+   
+}
+
+
+
+
+
+/* our vision css start  */
+
+.vision-container{
+    /* background-color: #211f1f; */
+    /* height: 100vh !important; */
+    /* display: flex;
+    align-items: center; */
+   
+}
+
+.vision-inner-box{
+    border: 1px solid #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    border-right: 10px solid #ffffff;
+    height: 100%;
+}
+
+.vision-inner-box img{
+    /* border: 2px solid red; */
+    margin: 1rem;
+    filter: drop-shadow(0 0 0.10rem rgb(255, 255, 255));
+}
+
+.vision-inner-box h6{
+    font-size: 24px;
+}
+
+.vision-inner-box{
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px){
+
+    .vision-container{
+        height: auto !important;
+    }
+}
+
+/* our vision css End  */
+
+
+/* why-attend-container css start  */
+
+.why-attend-container{
+    /* height: 100vh; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.why-attend-box{
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    box-shadow: rgba(105, 102, 102, 0.56) 0px 22px 70px 4px;
+}
+
+
+
+/* why-attend-container css end  */
+
+
+
+
+/* nirav vadhiya css end  */
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+
+.navbar .navbar-brand img {
+   max-height:55px;    
+    /* width: 170px; */
+    /* border: 2px solid red; */
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 10px 0;
+    color: #000000 !important;
+    color: #000;
+    font-weight: 500;
+    outline: none;
+    line-height: 1.3;
+    /* font-size: 18px; */
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+    
+    border-bottom: 2px solid var(--primary) !important;
+}
+
+
+
+
+
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+.navbar .nav-item .dropdown-menu .dropdown-item:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+
+}
+
+.navbar .nav-item .dropdown-menu .dropdown-item {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media (max-width: 991.98px) {
+
+    .navbar .navbar-nav {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        padding-left: 30px;
+
+
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        background-color: var(--secondary);
+
+
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+        /* background-color: var(--primary); */
+        border: 1px solid var(--light);
+        border-top: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar .navbar-brand img {
+        width: 160px;
+    }
+
+    .logo-text {
+        font-size: 8px;
+        line-height: 9px;
+    }
+
+    .cursor {
+        display: none;
+    }
+
+
+}
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    border: 15px solid var(--primary);
+    border-radius: 50px;
+}
+
+.banner-img {
+    max-height: 500px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .banner-img {
+        max-height: 250px;
+        width: 100%;
+
+    }
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* about section css start  */
+.about-mian-container {
+    background-image: url(/img/about-back-img.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.main-head {
+    background: linear-gradient(90deg, #373537, #c7c2c2, #2e2c2d, #000000);
+    background-size: 200%;
+    /* Adjusted background size for animation effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 1rem 0rem;
+    animation: gradientAnimation 3s ease-in-out infinite;
+
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-head-container {
+    /* background-color: #bd3434; */
+    border-top: 5px solid #000000;
+    border-bottom: 5px solid #000000;
+    border-radius: 15px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+@media screen and (max-width: 480px) {
+    .main-head {
+        font-size: 20px !important;
+    }
+}
+
+.about-sub-container p {
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #000000ab;
+
+}
+
+.about-sub-container p:hover {
+    color: #000000;
+
+
+}
+
+/* swing css start  */
+
+
+
+.swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    float: left;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.swing a {
+    /* border: 5px solid #f8f8f8; */
+    display: block;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+
+}
+
+.swing:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    top: -10px;
+    left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+/* nail */
+.swing:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -14px;
+    left: 54%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+
+
+/* swing css end  */
+
+
+
+/* btn color chng  */
+.color-changing-element {
+    /* width: 200px; */
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    /* border-radius: 8px; */
+
+    /* Apply the animation */
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #000000;
+    }
+
+    /* Start with this color */
+    25% {
+        background-color: #b6228c;
+    }
+
+    /* Transition to this color */
+    50% {
+        background-color: green;
+    }
+
+    /* Transition to this color */
+    75% {
+        background-color: #000000;
+    }
+
+    /* Transition to this color */
+    100% {
+        background-color: #b6228c;
+    }
+
+    /* Loop back to the start color */
+}
+
+
+/* about section css end  */
+
+
+
+/* text animation  */
+.ml1 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.ml1 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.ml1 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    transform-origin: 0 0;
+}
+
+.ml1 .line1 {
+    top: 0;
+}
+
+.ml1 .line2 {
+    bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+    .ml1 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* text animation end */
+
+
+
+.gradient-text {
+    background-image: linear-gradient(180deg, #44214f, #b6228c, #44214f);
+    /* Adjust gradient colors */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Needed for WebKit browsers */
+    color: transparent;
+    /* Makes the text color transparent so only the gradient shows */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*** Footer ***/
+.footer {
+    background-color: #020203;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    width: auto;
+    margin: 0 5%;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-logo {
+    flex-basis: 23%;
+}
+
+.logo {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.footer-links {
+    flex-basis: 15%;
+}
+
+.footer-links h3, .footer-newsletter h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.footer-newsletter {
+    flex-basis: 30%;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-logo, .footer-links, .footer-newsletter {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+.color-red {
+    color: red;
+}
+
+.textarea1 {
+    width: 100%;
+    height: 150px;
+    background-color: #e8e7ec;
+    border: none;
+    margin-top: 1rem !important;
+    border-radius: 5px
+}
+
+.textarea1::placeholder {
+    padding: 1rem;
+    font-size: 18px;
+}
+
+/* contact css End  */
+
+
+
+.logo2 {
+    border-radius: 8px;
+}
+
+.asimg {
+    aspect-ratio: 3/2;
+}
+
+
+
+
+.ul {
+    list-style-type: none !important;
+}
+
+.service-item1 ul li {
+    list-style-type: none !important;
+}
+
+
+@keyframes shake-animation {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    1.78571% {
+        transform: translate(0, 5px)
+    }
+
+    3.57143% {
+        transform: translate(0, 0)
+    }
+
+    5.35714% {
+        transform: translate(0, 5px)
+    }
+
+    7.14286% {
+        transform: translate(0, 0)
+    }
+
+    8.92857% {
+        transform: translate(0, 5px)
+    }
+
+    10.71429% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+.whatsapp_float {
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.shake {
+    animation: shake-animation 2.72s ease infinite;
+    transform-origin: 50% 50%;
+}
+
+.whatsapp_float_btn {
+    width: 50px;
+    height: 50px;
+}
+
+
+.float-btn-visitor {
+    padding: 8px 10px !important;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    width: 300px !important;
+
+    display: block;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    clip-path: polygon(0% 1%, 104% -42%, 95% 50%, 100% 100%, 0% 100%, 7% 50%);
+    background: linear-gradient(270deg, var(--primary), var(--primary), var(--secondary), var(--secondary), var(--primary));
+    background-size: 400% 400%;
+    /* Ensures smooth color transitions */
+    animation: gradientAnimation 4s ease infinite;
+    color: #ffffff;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+.animated-arrow {
+
+    left: -5px;
+    /* Adjust starting position as needed */
+    animation: arrowFlow 4s ease-in-out infinite;
+}
+
+@keyframes arrowFlow {
+    0% {
+        transform: translateX(-30px);
+        /* Starts off to the left */
+        opacity: 0;
+        /* Starts with 0 opacity */
+    }
+
+    50% {
+        transform: translateX(0);
+        /* Moves to its original position */
+        opacity: 1;
+        /* Fully visible */
+    }
+
+    100% {
+        transform: translateX(-30px);
+        /* Returns to the starting point */
+        opacity: 0;
+        /* Fades out again */
+    }
+}
+
+
+.float-btn-visitor:hover {
+    color: var(--secondary);
+    background-color: #ffffff !important;
+    outline: 2px solid var(--secondary);
+    font-weight: 500;
+    color: #ffffff;
+
+}
+
+
+
+
+.float-btn-container {
+    position: fixed;
+    top: 370px;
+    right: 8px;
+    z-index: 1000;
+    /* width: 250px; */
+
+}
+
+.float-btn-container2 {
+    position: fixed;
+    top: 420px;
+    right: 8px;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+/* why exhibit css start  */
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/segment-back-img.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+
+@media (max-width:600px) {
+
+    .float-btn-container {
+        top: 95%;
+    }
+
+    .float-btn-container2 {
+        top: 95%;
+        left: 0px;
+        /* font-size: 10px !important; */
+    }
+
+    .float-btn-visitor {
+        /* padding: 10px !important; */
+        font-size: 14px;
+        padding: 5px 12px !important;
+        display: inline;
+        /* width: fit-content !important; */
+    }
+
+    .nirav {
+        display: none;
+    }
+
+    .float-btn-container2 {
+        /* border: 2px solid red; */
+        width: fit-content;
+    }
+
+}
+
+@media (max-width:380px){
+    .float-btn-visitor{
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+/* Exhibit-registration css start  */
+
+
+
+.inp1 {
+    width: 100%;
+    border: none;
+    background-color: #ffffff;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    /* border-radius: 5px; */
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+
+}
+
+.inp1::placeholder {
+    padding: 5px;
+    color: gainsboro;
+}
+
+.lable1 {
+    font-size: 16px;
+    /* color: rgb(78, 74, 74); */
+    letter-spacing: 1px;
+}
+
+.submit-btn1 {
+    letter-spacing: 1px;
+}
+
+/* Exhibit-registration css End  */
+
+
+
+.btn1 {
+    background: var(--primary);
+    color: #ffffff;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+
+}
+
+.btn1:hover {
+    background-color: #ffffff;
+    outline: 2px solid var(--primary);
+    color: var(--primary);
+
+
+}
+
+
+/* underline aniamtion  */
+/* Style for the span with animated underline */
+.underline-animation {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    /* color: black; */
+}
+
+/* Bottom underline animation */
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    animation: underlineLoop 3s infinite;
+}
+
+/* Keyframes for the underline animation */
+@keyframes underlineLoop {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.text-gray {
+    color: gray;
+}
+
+
+
+
+
+
+.text19 {
+    font-size: 19px;
+    /* line-height: 20px; */
+}
+
+
+
+
+
+.aspect-ratio{
+    aspect-ratio:  3/4 ;
+}
+
+
+/* form validation css start  */
+.error-border {
+    border: 2px solid red !important;
+}
+.error-msg {
+    color: red;
+    font-size: 0.875rem;
+}
+
+.form-control{
+    background-color: #e1e1e1 !important;
+}
+/* form validation css end  */
+
+
+/* auto swip logo  css start  */
+
+.slider1 {
+    height: 140px;
+    margin: auto;
+    overflow: hidden; /* Hide the overflowing slides */
+    position: relative;
+    width: 100%; /* Set your desired width */
+    
+}
+
+.slide1{
+    text-align: center;
+}
+
+.slider1 .slide-track {
+    display: flex;
+    /* transition: transform 0.5s linear; Smooth transition for the scrolling */
+    animation: scroll-left 20s linear infinite;
+}
+
+.slide1 img{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+    border-radius: 5px;
+    
+} 
+
+.slider1 .slide1 {
+    height: 120px;
+    width: 250px;
+    flex-shrink: 0;
+    /* border: 2px solid red; */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.slider1 .slide-track1 {
+    display: flex;
+    /* transition: transform 0.5s linear; Smooth transition for the scrolling */
+    animation: scroll-right 20s linear infinite;
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+/* auto swip logo  css End  */
+
+
+
+/* auto swip logo right to left css start  */
+
+
+  
+
+/* auto swip logo left to right css end  */
+
+
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 10px; /* Space between items */
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center; /* Center checkbox and label vertically */
+    flex: 1 1 1 200px; /* Grow, shrink, and set a base width */
+}
+
+.checkbox-item input {
+    margin-right: 8px; /* Space between checkbox and label */
+}
+
+@media screen and (max-width: 576px) {
+    .checkbox-item {
+        flex: 1 1 100px; /* Stack items in one column on small screens */
+    }
+}
