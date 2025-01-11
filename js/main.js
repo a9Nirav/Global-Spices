@@ -4,37 +4,31 @@
   // Spinner
   var spinner = function () {
     setTimeout(function () {
-      if ($('#spinner').length > 0) {
-        $('#spinner').removeClass('show');
+      if ($("#spinner").length > 0) {
+        $("#spinner").removeClass("show");
       }
     }, 1);
   };
   spinner();
 
-
   // Initiate the wowjs
   new WOW().init();
-
 
   // Sticky Navbar
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
-      $('.sticky-top').addClass('shadow-sm').css('top', '0px');
+      $(".sticky-top").addClass("shadow-sm").css("top", "0px");
     } else {
-      $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
+      $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
     }
   });
-
-
-
-
 
   // Get all links inside the navbar
   const navbarLinks = document.querySelectorAll("#navbarCollapse .nav-link");
   const navbarCollapse = document.getElementById("navbarCollapse");
 
   // Add click event to each link
-  navbarLinks.forEach(link => {
+  navbarLinks.forEach((link) => {
     link.addEventListener("click", () => {
       // Check if the navbar is open
       if (navbarCollapse.classList.contains("show")) {
@@ -47,51 +41,87 @@
   });
 
 
+  // (function ($) {
+  //   // Smooth scrolling on the navbar links
+  //   $(".navbar-nav a").on("click", function (event) {
+  //     if (this.hash !== "") {
+  //       event.preventDefault();
 
-  (function ($) {
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a").on("click", function (event) {
+  //       // Smooth scroll animation
+  //       $("html, body").animate(
+  //         {
+  //           scrollTop: $(this.hash).offset().top - 70,  // Adjust for sticky navbar height
+  //         },
+  //         1000, // Duration of the animation in milliseconds
+  //         "easeInOutExpo" // Easing function (make sure to include easing library if not native)
+  //       );
+
+  //       // Update the active class in navbar
+  //       $(".navbar-nav .active").removeClass("active");
+  //       $(this).addClass("active");
+  //     }
+  //   });
+
+  //   // Highlight navbar links on scroll
+  //   $(window).on("scroll", function () {
+  //     const scrollPosition = $(this).scrollTop() + 80; // Adjust for sticky navbar height
+  //     $(".navbar-nav a").each(function () {
+  //       const section = $(this.hash);
+  //       if (
+  //         section.length &&
+  //         section.offset().top <= scrollPosition &&
+  //         section.offset().top + section.outerHeight() > scrollPosition
+  //       ) {
+  //         $(".navbar-nav .active").removeClass("active");
+  //         $(this).addClass("active");
+  //       }
+  //     });
+  //   });
+  // })(jQuery);
+
+  // Smooth scrolling on the navbar links
+  document.querySelectorAll(".navbar-nav a").forEach((anchor) => {
+    anchor.addEventListener("click", function (event) {
       if (this.hash !== "") {
         event.preventDefault();
 
         // Smooth scroll animation
-        $("html, body").animate(
-          {
-            scrollTop: $(this.hash).offset().top - 70,  // Adjust for sticky navbar height
-          },
-          1000, // Duration of the animation in milliseconds
-          "easeInOutExpo" // Easing function (make sure to include easing library if not native)
-        );
+        const target = document.querySelector(this.hash);
+        window.scrollTo({
+          top: target.offsetTop - (window.innerWidth <= 600 ? 340 : 80), // Adjust for sticky navbar height
+          behavior: "smooth",
+        });
 
         // Update the active class in navbar
-        $(".navbar-nav .active").removeClass("active");
-        $(this).addClass("active");
+        document
+          .querySelectorAll(".navbar-nav .active")
+          .forEach((activeLink) => {
+            activeLink.classList.remove("active");
+          });
+        this.classList.add("active");
       }
     });
+  });
 
-
-
-
-    // Highlight navbar links on scroll
-    $(window).on("scroll", function () {
-      const scrollPosition = $(this).scrollTop() + 80; // Adjust for sticky navbar height
-      $(".navbar-nav a").each(function () {
-        const section = $(this.hash);
-        if (
-          section.length &&
-          section.offset().top <= scrollPosition &&
-          section.offset().top + section.outerHeight() > scrollPosition
-        ) {
-          $(".navbar-nav .active").removeClass("active");
-          $(this).addClass("active");
-        }
-      });
-    });
-  })(jQuery);
-
-
-
-
+  // Highlight navbar links on scroll
+  // window.addEventListener("scroll", () => {
+  //   const scrollPosition = window.scrollY + 80; // Adjust for sticky navbar height
+  //   document.querySelectorAll(".navbar-nav a").forEach((anchor) => {
+  //     const section = document.querySelector(anchor.hash);
+  //     if (
+  //       section &&
+  //       section.offsetTop <= scrollPosition &&
+  //       section.offsetTop + section.offsetHeight > scrollPosition
+  //     ) {
+  //       document
+  //         .querySelectorAll(".navbar-nav .active")
+  //         .forEach((activeLink) => {
+  //           activeLink.classList.remove("active");
+  //         });
+  //       anchor.classList.add("active");
+  //     }
+  //   });
+  // });
 
   // Back to top button
   // $(window).scroll(function () {
@@ -106,13 +136,11 @@
   //   return false;
   // });
 
-
   // Facts counter
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
-    time: 2000
+    time: 2000,
   });
-
 
   // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
@@ -124,15 +152,10 @@
     nav: true,
     navText: [
       '<i class="bi bi-chevron-left"></i>',
-      '<i class="bi bi-chevron-right"></i>'
-    ]
+      '<i class="bi bi-chevron-right"></i>',
+    ],
   });
-
-
 })(jQuery);
-
-
-
 
 // for logo swip
 
@@ -143,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const slideWidth = slides[0].offsetWidth;
 
   // Duplicate slides
-  slides.forEach(slide => {
+  slides.forEach((slide) => {
     const clone = slide.cloneNode(true);
     sliderTrack.appendChild(clone);
   });
@@ -165,6 +188,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+function toggleNavbar(id) {
+  const navbarCollapse = document.getElementById(id);
+  if (navbarCollapse.classList.contains("show")) {
+    // navbarCollapse.classList.remove("show");
+    const collapse = new bootstrap.Collapse(navbarCollapse, {
+      toggle: true,
+    });
+    collapse.hide();
+  } else {
+    const collapse = new bootstrap.Collapse(navbarCollapse, {
+      toggle: true,
+    });
+    collapse.open();
+    navbarCollapse.classList.add("show");
+  }
+}
 // document.addEventListener("DOMContentLoaded", function() {
 //     const sliderTrack = document.querySelector(".slide-track");
 //     const slides = Array.from(document.querySelectorAll(".slide1"));
@@ -192,9 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //     startScroll();
 // });
 
-
-
-
 // topbar type write
 // const text = "INTERNATIONAL PRIVATE LABEL AND CONTRACT MANUFACTURING EXPO";
 // let index = 0;
@@ -209,45 +245,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // typeWriter();
 
+// text animation
+var textWrapper = document.querySelector(".ml1 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+  /\S/g,
+  "<span class='letter'>$&</span>"
+);
 
-
-
-
-
-
-
-// text animation 
-var textWrapper = document.querySelector('.ml1 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({ loop: true })
+anime
+  .timeline({ loop: true })
   .add({
-    targets: '.ml1 .letter',
+    targets: ".ml1 .letter",
     scale: [0.3, 1],
     opacity: [0, 1],
     translateZ: 0,
     easing: "easeOutExpo",
     duration: 600,
-    delay: (el, i) => 70 * (i + 1)
-  }).add({
-    targets: '.ml1 .line',
+    delay: (el, i) => 70 * (i + 1),
+  })
+  .add({
+    targets: ".ml1 .line",
     scaleX: [0, 1],
     opacity: [0.5, 1],
     easing: "easeOutExpo",
     duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1',
+    offset: "-=875",
+    delay: (el, i, l) => 80 * (l - i),
+  })
+  .add({
+    targets: ".ml1",
     opacity: 0,
     duration: 1000,
     easing: "easeOutExpo",
-    delay: 1000
+    delay: 1000,
   });
 
-
-
-//   mouse animation 
+//   mouse animation
 // const cursor = document.querySelector('.cursor');
 
 // document.addEventListener('mousemove', e => {
@@ -261,29 +294,14 @@ anime.timeline({ loop: true })
 //     }, 500);
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-item.nav-link");
 
   // Add click event listener to each nav link
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     link.addEventListener("click", function (event) {
       // Remove active class from all links
-      navLinks.forEach(nav => nav.classList.remove("active"));
+      navLinks.forEach((nav) => nav.classList.remove("active"));
 
       // Add active class to the clicked link
       this.classList.add("active");
@@ -293,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update active link on scroll
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       const section = document.querySelector(link.getAttribute("href"));
       if (
         section &&
@@ -301,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
         section.offsetTop + section.offsetHeight > scrollPosition
       ) {
         // Remove active class from all links
-        navLinks.forEach(nav => nav.classList.remove("active"));
+        navLinks.forEach((nav) => nav.classList.remove("active"));
 
         // Add active class to the link corresponding to the current section
         link.classList.add("active");
@@ -309,16 +327,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
-
-
-
-
-
-
-
-
 
 // Form validation script
 // document.getElementById("myForm").addEventListener("submit", function (e) {
@@ -377,16 +385,3 @@ document.addEventListener("DOMContentLoaded", () => {
 //         // You can now handle the form data (e.g., send it to the server)
 //     }
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
